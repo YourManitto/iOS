@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bxU-Sm-YNy">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="-2"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XHO-IZ-U0j">
+            <objects>
+                <viewController id="teS-6Z-Nzi" customClass="ViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jmj-E8-ng1">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="kPE-ja-WGL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLK-q2-pib" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="-670"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fsT-ht-jNt">
+            <objects>
+                <viewController id="bxU-Sm-YNy" customClass="ViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7qN-ae-pCx">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="277" translatesAutoresizingMaskIntoConstraints="NO" id="bHg-bi-I9g">
+                                <rect key="frame" x="30" y="78" width="333" height="33"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eY8-VL-r9r">
+                                        <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fw1-U5-8hR">
+                                                <rect key="frame" x="0.0" y="0.0" width="33" height="33"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="33" id="5CK-um-phr"/>
+                                            <constraint firstAttribute="height" constant="33" id="KWM-kH-Q0p"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lBm-75-dHm">
+                                        <rect key="frame" x="310" y="0.0" width="23" height="33"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gearshape" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vcq-pY-l9f">
+                                                <rect key="frame" x="0.0" y="0.33333333333333215" width="23" height="32.666666666666671"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33" id="1Bm-hU-gx6"/>
+                                                    <constraint firstAttribute="width" constant="23" id="v8T-T6-KPc"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="e4U-lA-wtv">
+                                <rect key="frame" x="33" y="151" width="327" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="너만의 마니또 시작하기" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxi-xO-gXf">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="OT9-fx-AWy">
+                                <rect key="frame" x="55" y="201" width="283" height="130"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IRy-GN-6Wo">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILH-d0-C6K" customClass="Room" customModule="YourManitto" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                <color key="backgroundColor" red="0.88627450980392153" green="0.97254901960784312" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" red="0.18823529411764706" green="0.1803921568627451" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="makeRoom" imagePlacement="top" title="방 시작하기" imagePadding="15" titleAlignment="center"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gys-8y-4rr">
+                                        <rect key="frame" x="153" y="0.0" width="130" height="130"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-Ti-rmp" customClass="Room" customModule="YourManitto" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
+                                                <color key="backgroundColor" red="0.8862745098" green="0.97254901959999995" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="tintColor" red="0.18823529410000001" green="0.18039215689999999" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="enterRoom" imagePlacement="top" title="방 입장하기" imagePadding="15" titleAlignment="center"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="De7-GK-drA">
+                                <rect key="frame" x="33" y="391" width="327" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나만의 마니또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzW-a8-4Hf">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Srb-S8-AvA">
+                                <rect key="frame" x="0.0" y="452" width="393" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mBy-hv-gh5">
+                                    <size key="itemSize" width="316" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rvn-vQ-sjU">
+                                        <rect key="frame" x="38.666666666666664" y="0.0" width="316" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="i9Z-4Q-rUt">
+                                            <rect key="frame" x="0.0" y="0.0" width="316" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyW-3P-gcW">
+                                                    <rect key="frame" x="19" y="45" width="27" height="12"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFM-4S-vQa">
+                                                    <rect key="frame" x="18" y="19" width="38" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="316" height="80"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nGW-7v-W1E"/>
+                        <color key="backgroundColor" red="1" green="0.99607843137254903" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="e4U-lA-wtv" firstAttribute="leading" secondItem="nGW-7v-W1E" secondAttribute="leading" constant="33" id="48z-B0-M9X"/>
+                            <constraint firstItem="OT9-fx-AWy" firstAttribute="leading" secondItem="nGW-7v-W1E" secondAttribute="leading" constant="55" id="5h3-9j-qzR"/>
+                            <constraint firstItem="nGW-7v-W1E" firstAttribute="trailing" secondItem="e4U-lA-wtv" secondAttribute="trailing" constant="33" id="7We-8Q-NDO"/>
+                            <constraint firstItem="De7-GK-drA" firstAttribute="top" secondItem="OT9-fx-AWy" secondAttribute="bottom" constant="60" id="88T-xs-0IZ"/>
+                            <constraint firstItem="e4U-lA-wtv" firstAttribute="top" secondItem="bHg-bi-I9g" secondAttribute="bottom" constant="40" id="Jcv-mr-5QO"/>
+                            <constraint firstItem="bHg-bi-I9g" firstAttribute="top" secondItem="nGW-7v-W1E" secondAttribute="top" constant="19" id="OUk-GM-qNw"/>
+                            <constraint firstItem="nGW-7v-W1E" firstAttribute="trailing" secondItem="OT9-fx-AWy" secondAttribute="trailing" constant="55" id="Tbu-RG-Nr0"/>
+                            <constraint firstItem="bHg-bi-I9g" firstAttribute="leading" secondItem="nGW-7v-W1E" secondAttribute="leading" constant="30" id="fTR-RZ-QdC"/>
+                            <constraint firstItem="nGW-7v-W1E" firstAttribute="trailing" secondItem="De7-GK-drA" secondAttribute="trailing" constant="33" id="hrr-g7-GVR"/>
+                            <constraint firstItem="De7-GK-drA" firstAttribute="leading" secondItem="nGW-7v-W1E" secondAttribute="leading" constant="33" id="k0s-lo-g94"/>
+                            <constraint firstItem="De7-GK-drA" firstAttribute="leading" secondItem="nGW-7v-W1E" secondAttribute="leading" constant="33" id="kng-Dp-xOU"/>
+                            <constraint firstItem="nGW-7v-W1E" firstAttribute="trailing" secondItem="bHg-bi-I9g" secondAttribute="trailing" constant="30" id="lNK-nq-aOt"/>
+                            <constraint firstItem="OT9-fx-AWy" firstAttribute="top" secondItem="e4U-lA-wtv" secondAttribute="bottom" constant="26" id="ofz-CT-sL5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QUy-kr-9Av" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="829.7709923664122" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="enterRoom" width="40" height="40"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="logo" width="30" height="30.333333969116211"/>
+        <image name="makeRoom" width="40" height="40"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
