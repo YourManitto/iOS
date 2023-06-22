@@ -13,10 +13,12 @@
 		ED5FB0812A440A9F000B09CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB07F2A440A9F000B09CE /* Main.storyboard */; };
 		ED5FB0832A440AA1000B09CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB0822A440AA1000B09CE /* Assets.xcassets */; };
 		ED5FB0862A440AA1000B09CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB0842A440AA1000B09CE /* LaunchScreen.storyboard */; };
-		ED5FB08E2A440BB7000B09CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB08D2A440BB7000B09CE /* GoogleService-Info.plist */; };
 		ED5FB0912A440CB1000B09CE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ED5FB0902A440CB1000B09CE /* FirebaseAnalytics */; };
 		ED5FB0932A448424000B09CE /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0922A448424000B09CE /* Room.swift */; };
 		ED5FB0952A448E3E000B09CE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0942A448E3E000B09CE /* MainViewController.swift */; };
+		ED5FB0972A4492CB000B09CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB0962A4492CA000B09CE /* GoogleService-Info.plist */; };
+		ED5FB0992A44ABFE000B09CE /* Dday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0982A44ABFE000B09CE /* Dday.swift */; };
+		ED5FB09B2A44AD89000B09CE /* MyRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB09A2A44AD89000B09CE /* MyRoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,9 +30,11 @@
 		ED5FB0822A440AA1000B09CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED5FB0852A440AA1000B09CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED5FB0872A440AA1000B09CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ED5FB08D2A440BB7000B09CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED5FB0922A448424000B09CE /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
-		ED5FB0942A448E3E000B09CE /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ED5FB0942A448E3E000B09CE /* MainViewController.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		ED5FB0962A4492CA000B09CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED5FB0982A44ABFE000B09CE /* Dday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dday.swift; sourceTree = "<group>"; };
+		ED5FB09A2A44AD89000B09CE /* MyRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,7 @@
 		ED5FB0782A440A9F000B09CE /* YourManitto */ = {
 			isa = PBXGroup;
 			children = (
+				ED5FB09A2A44AD89000B09CE /* MyRoomViewController.swift */,
 				ED5FB0792A440A9F000B09CE /* AppDelegate.swift */,
 				ED5FB07B2A440A9F000B09CE /* SceneDelegate.swift */,
 				ED5FB07D2A440A9F000B09CE /* ViewController.swift */,
@@ -71,9 +76,10 @@
 				ED5FB0822A440AA1000B09CE /* Assets.xcassets */,
 				ED5FB0842A440AA1000B09CE /* LaunchScreen.storyboard */,
 				ED5FB0872A440AA1000B09CE /* Info.plist */,
-				ED5FB08D2A440BB7000B09CE /* GoogleService-Info.plist */,
+				ED5FB0962A4492CA000B09CE /* GoogleService-Info.plist */,
 				ED5FB0922A448424000B09CE /* Room.swift */,
 				ED5FB0942A448E3E000B09CE /* MainViewController.swift */,
+				ED5FB0982A44ABFE000B09CE /* Dday.swift */,
 			);
 			path = YourManitto;
 			sourceTree = "<group>";
@@ -143,7 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED5FB0862A440AA1000B09CE /* LaunchScreen.storyboard in Resources */,
-				ED5FB08E2A440BB7000B09CE /* GoogleService-Info.plist in Resources */,
+				ED5FB0972A4492CB000B09CE /* GoogleService-Info.plist in Resources */,
 				ED5FB0832A440AA1000B09CE /* Assets.xcassets in Resources */,
 				ED5FB0812A440A9F000B09CE /* Main.storyboard in Resources */,
 			);
@@ -157,9 +163,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED5FB07E2A440A9F000B09CE /* ViewController.swift in Sources */,
+				ED5FB0992A44ABFE000B09CE /* Dday.swift in Sources */,
 				ED5FB07A2A440A9F000B09CE /* AppDelegate.swift in Sources */,
 				ED5FB0932A448424000B09CE /* Room.swift in Sources */,
 				ED5FB07C2A440A9F000B09CE /* SceneDelegate.swift in Sources */,
+				ED5FB09B2A44AD89000B09CE /* MyRoomViewController.swift in Sources */,
 				ED5FB0952A448E3E000B09CE /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
