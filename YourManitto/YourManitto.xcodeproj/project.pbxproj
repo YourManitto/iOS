@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074F01ADAECE6B1ED14E3BCD /* Pods_YourManitto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E5E71585695BB3BA752EDE /* Pods_YourManitto.framework */; };
+		ED3E65562A4572F8005C26B9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ED3E65552A4572F8005C26B9 /* FirebaseAuth */; };
 		ED5FB07A2A440A9F000B09CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0792A440A9F000B09CE /* AppDelegate.swift */; };
 		ED5FB07C2A440A9F000B09CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB07B2A440A9F000B09CE /* SceneDelegate.swift */; };
 		ED5FB07E2A440A9F000B09CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB07D2A440A9F000B09CE /* ViewController.swift */; };
@@ -19,9 +21,14 @@
 		ED5FB0972A4492CB000B09CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB0962A4492CA000B09CE /* GoogleService-Info.plist */; };
 		ED5FB0992A44ABFE000B09CE /* Dday.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0982A44ABFE000B09CE /* Dday.swift */; };
 		ED5FB09B2A44AD89000B09CE /* MyRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB09A2A44AD89000B09CE /* MyRoomViewController.swift */; };
+		ED5FB09D2A45583A000B09CE /* longButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB09C2A45583A000B09CE /* longButton.swift */; };
+		ED5FB09F2A455925000B09CE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB09E2A455925000B09CE /* StartViewController.swift */; };
+		ED5FB0A12A456274000B09CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0A02A456274000B09CE /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD673AB7FA2F230B92571267 /* Pods-YourManitto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourManitto.release.xcconfig"; path = "Target Support Files/Pods-YourManitto/Pods-YourManitto.release.xcconfig"; sourceTree = "<group>"; };
+		C0E5E71585695BB3BA752EDE /* Pods_YourManitto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourManitto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5FB0762A440A9F000B09CE /* YourManitto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourManitto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5FB0792A440A9F000B09CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED5FB07B2A440A9F000B09CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +42,11 @@
 		ED5FB0962A4492CA000B09CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED5FB0982A44ABFE000B09CE /* Dday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dday.swift; sourceTree = "<group>"; };
 		ED5FB09A2A44AD89000B09CE /* MyRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoomViewController.swift; sourceTree = "<group>"; };
+		ED5FB09C2A45583A000B09CE /* longButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = longButton.swift; sourceTree = "<group>"; };
+		ED5FB09E2A455925000B09CE /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		ED5FB0A02A456274000B09CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ED5FB0A72A456C5F000B09CE /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F68D8EA12FF85C0F1FE8C251 /* Pods-YourManitto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourManitto.debug.xcconfig"; path = "Target Support Files/Pods-YourManitto/Pods-YourManitto.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +55,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED5FB0912A440CB1000B09CE /* FirebaseAnalytics in Frameworks */,
+				ED3E65562A4572F8005C26B9 /* FirebaseAuth in Frameworks */,
+				074F01ADAECE6B1ED14E3BCD /* Pods_YourManitto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20E7B99FA07EBE15CCB7D005 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED5FB0A72A456C5F000B09CE /* FirebaseCore.framework */,
+				C0E5E71585695BB3BA752EDE /* Pods_YourManitto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0BF38DF3ABC5218AE96669A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F68D8EA12FF85C0F1FE8C251 /* Pods-YourManitto.debug.xcconfig */,
+				BD673AB7FA2F230B92571267 /* Pods-YourManitto.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED5FB06D2A440A9F000B09CE = {
 			isa = PBXGroup;
 			children = (
 				ED5FB0782A440A9F000B09CE /* YourManitto */,
 				ED5FB0772A440A9F000B09CE /* Products */,
+				D0BF38DF3ABC5218AE96669A /* Pods */,
+				20E7B99FA07EBE15CCB7D005 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +114,9 @@
 				ED5FB0922A448424000B09CE /* Room.swift */,
 				ED5FB0942A448E3E000B09CE /* MainViewController.swift */,
 				ED5FB0982A44ABFE000B09CE /* Dday.swift */,
+				ED5FB09C2A45583A000B09CE /* longButton.swift */,
+				ED5FB09E2A455925000B09CE /* StartViewController.swift */,
+				ED5FB0A02A456274000B09CE /* LoginViewController.swift */,
 			);
 			path = YourManitto;
 			sourceTree = "<group>";
@@ -91,9 +128,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED5FB08A2A440AA1000B09CE /* Build configuration list for PBXNativeTarget "YourManitto" */;
 			buildPhases = (
+				7C6F98198A25A66BD6A98B65 /* [CP] Check Pods Manifest.lock */,
 				ED5FB0722A440A9F000B09CE /* Sources */,
 				ED5FB0732A440A9F000B09CE /* Frameworks */,
 				ED5FB0742A440A9F000B09CE /* Resources */,
+				A7A05E21C896035469604E77 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -102,6 +141,7 @@
 			name = YourManitto;
 			packageProductDependencies = (
 				ED5FB0902A440CB1000B09CE /* FirebaseAnalytics */,
+				ED3E65552A4572F8005C26B9 /* FirebaseAuth */,
 			);
 			productName = YourManitto;
 			productReference = ED5FB0762A440A9F000B09CE /* YourManitto.app */;
@@ -157,6 +197,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7C6F98198A25A66BD6A98B65 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-YourManitto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7A05E21C896035469604E77 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YourManitto/Pods-YourManitto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-YourManitto/Pods-YourManitto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-YourManitto/Pods-YourManitto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED5FB0722A440A9F000B09CE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -167,8 +249,11 @@
 				ED5FB07A2A440A9F000B09CE /* AppDelegate.swift in Sources */,
 				ED5FB0932A448424000B09CE /* Room.swift in Sources */,
 				ED5FB07C2A440A9F000B09CE /* SceneDelegate.swift in Sources */,
+				ED5FB09F2A455925000B09CE /* StartViewController.swift in Sources */,
 				ED5FB09B2A44AD89000B09CE /* MyRoomViewController.swift in Sources */,
 				ED5FB0952A448E3E000B09CE /* MainViewController.swift in Sources */,
+				ED5FB0A12A456274000B09CE /* LoginViewController.swift in Sources */,
+				ED5FB09D2A45583A000B09CE /* longButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +395,7 @@
 		};
 		ED5FB08B2A440AA1000B09CE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F68D8EA12FF85C0F1FE8C251 /* Pods-YourManitto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -338,6 +424,7 @@
 		};
 		ED5FB08C2A440AA1000B09CE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD673AB7FA2F230B92571267 /* Pods-YourManitto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -399,6 +486,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		ED3E65552A4572F8005C26B9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED5FB08F2A440CB1000B09CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		ED5FB0902A440CB1000B09CE /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ED5FB08F2A440CB1000B09CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

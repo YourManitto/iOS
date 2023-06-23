@@ -9,21 +9,22 @@ import UIKit
 
 class MyRoomViewController: UIViewController {
 
+    @IBOutlet weak var deleteButton: defaultBtn!
+    @IBOutlet weak var MyManittoButton: defaultBtn!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        MyManittoButton.translatesAutoresizingMaskIntoConstraints = false
+                NSLayoutConstraint.activate([
+                    MyManittoButton.heightAnchor.constraint(equalToConstant: 90)
+                ])
+        
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([deleteButton.heightAnchor.constraint(equalToConstant: 40)
+                                     ])
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
