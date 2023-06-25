@@ -33,10 +33,10 @@ class LoginViewController: UIViewController {
                 print("이메일 로그인 성공")
                 
                 // 로그인 후 처리할 작업 수행
-                let vcName = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController")
-                        vcName?.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-                        vcName?.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-                        self.present(vcName!, animated: true, completion: nil)            }
+                if let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController"){
+                    self.navigationController?.pushViewController(mainVC, animated: true)
+                }
+            }
         }
     }
 
