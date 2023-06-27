@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Room: UIButton {
+class RoomBtn: UIButton {
     
     override func awakeFromNib() {
         super.awakeFromNib()

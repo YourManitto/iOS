@@ -12,19 +12,36 @@ import FirebaseAuth
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    let loadingView = UIView()  // 로딩 인디케이터를 표시할 뷰
+        let activityIndicator = UIActivityIndicatorView(style: .gray)  // 로딩 인디케이터
 
+
+    @IBOutlet weak var enterLoginButton: defaultBtn!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        title = "Login"
+        // 로딩 인디케이터 설정
+               activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+               activityIndicator.hidesWhenStopped = true
+               loadingView.addSubview(activityIndicator)
+               NSLayoutConstraint.activate([
+                   activityIndicator.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor),
+                   activityIndicator.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor)
+               ])
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            
+            // 키보드 표시
+            emailTextField.becomeFirstResponder()
+        }
     @IBAction func emailLoginTapped(_ sender: UIButton) {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
-        
+        showLoadingIndicator()
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+            self.hideLoadingIndicator()
             if let error = error {
                 // 로그인 실패
                 print("이메일 로그인 실패: \(error.localizedDescription)")
@@ -39,5 +56,18 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    func showLoadingIndicator() {
+            // 로딩 인디케이터 표시
+            activityIndicator.startAnimating()
+            loadingView.frame = view.bounds
+            view.addSubview(loadingView)
+        }
+
+        func hideLoadingIndicator() {
+            // 로딩 인디케이터 숨김
+            activityIndicator.stopAnimating()
+            loadingView.removeFromSuperview()
+        }
 
 }

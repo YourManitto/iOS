@@ -12,10 +12,8 @@ class StartViewController: UIViewController {
     @IBOutlet weak var otherButton: UIButton!
     @IBOutlet weak var kakaoButton: UIButton!
     @IBAction func otherButtonTapped(_ sender: UIButton) {
-//        let vcName = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController")
-//                vcName?.modalPresentationStyle = .fullScreen //전체화면으로 보이게 설정
-//                vcName?.modalTransitionStyle = .crossDissolve //전환 애니메이션 설정
-//                self.present(vcName!, animated: true, completion: nil)
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Login") as! LoginViewController
+        navigationController?.pushViewController(vc, animated: true)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,6 +11,7 @@ class MainViewController: UIViewController,UICollectionViewDataSource {
 
     @IBOutlet weak var ListCollectionView: UICollectionView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,8 +23,25 @@ class MainViewController: UIViewController,UICollectionViewDataSource {
              
      ListCollectionView.collectionViewLayout = layout
      
-
     }
+    
+    @IBAction func makeRoomButton(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "makeRoom") as? MakeRoomViewController else {
+                return
+            }
+            navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func enterRoomButton(_ sender: UIButton) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "enterRoom") as? EnterRoomViewController else{
+            return
+            
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    
     
  override func viewDidLayoutSubviews() {
          super.viewDidLayoutSubviews()
@@ -35,7 +53,7 @@ class MainViewController: UIViewController,UICollectionViewDataSource {
      }
     // 컬렉션 뷰 데이터 소스 - 아이템 개수 설정
         func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return 1 // 첫 번째 값만 표시하므로 1을 반환
+            return 8 // 첫 번째 값만 표시하므로 1을 반환
         }
         
         // 컬렉션 뷰 데이터 소스 - 셀 설정

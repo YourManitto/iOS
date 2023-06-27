@@ -8,14 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		074F01ADAECE6B1ED14E3BCD /* Pods_YourManitto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0E5E71585695BB3BA752EDE /* Pods_YourManitto.framework */; };
-		ED3E65562A4572F8005C26B9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = ED3E65552A4572F8005C26B9 /* FirebaseAuth */; };
+		ED3E65582A489EFA005C26B9 /* defaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E65572A489EFA005C26B9 /* defaultView.swift */; };
+		ED3E655A2A48A08C005C26B9 /* MakeRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E65592A48A08C005C26B9 /* MakeRoomViewController.swift */; };
+		ED3E655C2A48A81E005C26B9 /* EnterRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E655B2A48A81E005C26B9 /* EnterRoomViewController.swift */; };
+		ED3E65602A49CEF6005C26B9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E655F2A49CEF6005C26B9 /* SettingViewController.swift */; };
 		ED5FB07A2A440A9F000B09CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0792A440A9F000B09CE /* AppDelegate.swift */; };
 		ED5FB07C2A440A9F000B09CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB07B2A440A9F000B09CE /* SceneDelegate.swift */; };
 		ED5FB07E2A440A9F000B09CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB07D2A440A9F000B09CE /* ViewController.swift */; };
 		ED5FB0812A440A9F000B09CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB07F2A440A9F000B09CE /* Main.storyboard */; };
 		ED5FB0832A440AA1000B09CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB0822A440AA1000B09CE /* Assets.xcassets */; };
 		ED5FB0862A440AA1000B09CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB0842A440AA1000B09CE /* LaunchScreen.storyboard */; };
-		ED5FB0912A440CB1000B09CE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = ED5FB0902A440CB1000B09CE /* FirebaseAnalytics */; };
 		ED5FB0932A448424000B09CE /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0922A448424000B09CE /* Room.swift */; };
 		ED5FB0952A448E3E000B09CE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0942A448E3E000B09CE /* MainViewController.swift */; };
 		ED5FB0972A4492CB000B09CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED5FB0962A4492CA000B09CE /* GoogleService-Info.plist */; };
@@ -24,11 +26,16 @@
 		ED5FB09D2A45583A000B09CE /* longButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB09C2A45583A000B09CE /* longButton.swift */; };
 		ED5FB09F2A455925000B09CE /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB09E2A455925000B09CE /* StartViewController.swift */; };
 		ED5FB0A12A456274000B09CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0A02A456274000B09CE /* LoginViewController.swift */; };
+		EDFA33172A49E9BB00CB0C30 /* DefaultTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFA33162A49E9BB00CB0C30 /* DefaultTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BD673AB7FA2F230B92571267 /* Pods-YourManitto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourManitto.release.xcconfig"; path = "Target Support Files/Pods-YourManitto/Pods-YourManitto.release.xcconfig"; sourceTree = "<group>"; };
 		C0E5E71585695BB3BA752EDE /* Pods_YourManitto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourManitto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED3E65572A489EFA005C26B9 /* defaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultView.swift; sourceTree = "<group>"; };
+		ED3E65592A48A08C005C26B9 /* MakeRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakeRoomViewController.swift; sourceTree = "<group>"; };
+		ED3E655B2A48A81E005C26B9 /* EnterRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterRoomViewController.swift; sourceTree = "<group>"; };
+		ED3E655F2A49CEF6005C26B9 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		ED5FB0762A440A9F000B09CE /* YourManitto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourManitto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5FB0792A440A9F000B09CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED5FB07B2A440A9F000B09CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +53,7 @@
 		ED5FB09E2A455925000B09CE /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		ED5FB0A02A456274000B09CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED5FB0A72A456C5F000B09CE /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDFA33162A49E9BB00CB0C30 /* DefaultTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextField.swift; sourceTree = "<group>"; };
 		F68D8EA12FF85C0F1FE8C251 /* Pods-YourManitto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourManitto.debug.xcconfig"; path = "Target Support Files/Pods-YourManitto/Pods-YourManitto.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,8 +62,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED5FB0912A440CB1000B09CE /* FirebaseAnalytics in Frameworks */,
-				ED3E65562A4572F8005C26B9 /* FirebaseAuth in Frameworks */,
 				074F01ADAECE6B1ED14E3BCD /* Pods_YourManitto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +123,11 @@
 				ED5FB09C2A45583A000B09CE /* longButton.swift */,
 				ED5FB09E2A455925000B09CE /* StartViewController.swift */,
 				ED5FB0A02A456274000B09CE /* LoginViewController.swift */,
+				ED3E65572A489EFA005C26B9 /* defaultView.swift */,
+				ED3E65592A48A08C005C26B9 /* MakeRoomViewController.swift */,
+				ED3E655B2A48A81E005C26B9 /* EnterRoomViewController.swift */,
+				ED3E655F2A49CEF6005C26B9 /* SettingViewController.swift */,
+				EDFA33162A49E9BB00CB0C30 /* DefaultTextField.swift */,
 			);
 			path = YourManitto;
 			sourceTree = "<group>";
@@ -140,8 +151,6 @@
 			);
 			name = YourManitto;
 			packageProductDependencies = (
-				ED5FB0902A440CB1000B09CE /* FirebaseAnalytics */,
-				ED3E65552A4572F8005C26B9 /* FirebaseAuth */,
 			);
 			productName = YourManitto;
 			productReference = ED5FB0762A440A9F000B09CE /* YourManitto.app */;
@@ -172,7 +181,6 @@
 			);
 			mainGroup = ED5FB06D2A440A9F000B09CE;
 			packageReferences = (
-				ED5FB08F2A440CB1000B09CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = ED5FB0772A440A9F000B09CE /* Products */;
 			projectDirPath = "";
@@ -249,10 +257,15 @@
 				ED5FB07A2A440A9F000B09CE /* AppDelegate.swift in Sources */,
 				ED5FB0932A448424000B09CE /* Room.swift in Sources */,
 				ED5FB07C2A440A9F000B09CE /* SceneDelegate.swift in Sources */,
+				ED3E65602A49CEF6005C26B9 /* SettingViewController.swift in Sources */,
+				ED3E655C2A48A81E005C26B9 /* EnterRoomViewController.swift in Sources */,
+				ED3E655A2A48A08C005C26B9 /* MakeRoomViewController.swift in Sources */,
 				ED5FB09F2A455925000B09CE /* StartViewController.swift in Sources */,
 				ED5FB09B2A44AD89000B09CE /* MyRoomViewController.swift in Sources */,
+				ED3E65582A489EFA005C26B9 /* defaultView.swift in Sources */,
 				ED5FB0952A448E3E000B09CE /* MainViewController.swift in Sources */,
 				ED5FB0A12A456274000B09CE /* LoginViewController.swift in Sources */,
+				EDFA33172A49E9BB00CB0C30 /* DefaultTextField.swift in Sources */,
 				ED5FB09D2A45583A000B09CE /* longButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +422,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,6 +452,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,30 +488,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		ED5FB08F2A440CB1000B09CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		ED3E65552A4572F8005C26B9 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ED5FB08F2A440CB1000B09CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		ED5FB0902A440CB1000B09CE /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = ED5FB08F2A440CB1000B09CE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED5FB06E2A440A9F000B09CE /* Project object */;
 }

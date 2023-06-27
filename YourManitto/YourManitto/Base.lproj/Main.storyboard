@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IQC-3a-qF2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bZG-un-R5p">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -57,7 +58,6 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="다른 방법으로 로그인하기"/>
                                                 <connections>
                                                     <action selector="otherButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HUM-Qo-Os1"/>
-                                                    <segue destination="mZ1-ZN-CS8" kind="show" id="hAk-TZ-lBx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -79,7 +79,9 @@
                             <constraint firstItem="K27-H0-2Iq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="jbA-yn-hRW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UMm-qt-o6B"/>
+                    <navigationItem key="navigationItem" id="UMm-qt-o6B">
+                        <barButtonItem key="backBarButtonItem" title=" " id="uDU-Wq-GWw"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="kakaoButton" destination="PZu-id-S5e" id="XoU-Ke-djh"/>
                         <outlet property="otherButton" destination="RPa-6T-tMe" id="6KW-w3-Bla"/>
@@ -89,52 +91,173 @@
             </objects>
             <point key="canvasLocation" x="1002.2900763358779" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--Make Room View Controller-->
         <scene sceneID="CVX-FB-PMS">
             <objects>
-                <viewController id="N0k-Pe-uIb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="makeRoom" id="N0k-Pe-uIb" customClass="MakeRoomViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dJ2-kf-H4P">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FT8-Fb-ugD">
-                                <rect key="frame" x="0.0" y="301" width="393" height="551"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방 만들기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W7B-Pj-DB9">
-                                <rect key="frame" x="32" y="132" width="78" height="26"/>
+                                <rect key="frame" x="32.000000000000007" y="88" width="77.666666666666686" height="25.333333333333329"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="두근두근 나만의 마니또를 만나러 -!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIo-qK-CsM">
-                                <rect key="frame" x="32" y="166" width="197" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="두근두근 나만의 마니또를 만나러 -!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIo-qK-CsM">
+                                <rect key="frame" x="32" y="121.33333333333333" width="172.66666666666666" height="40.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FT8-Fb-ugD" customClass="defaultView" customModule="YourManitto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="192" width="393" height="660"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHd-US-AD1">
+                                        <rect key="frame" x="31.999999999999996" y="35" width="59.666666666666657" height="25.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 15자 까지 입력 가능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKp-lr-c78">
+                                        <rect key="frame" x="32" y="65.333333333333314" width="120" height="14.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="방 제목을 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Lt-Yd-QBe" customClass="DefaultTextField" customModule="YourManitto" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="94.666666666666686" width="333" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마니또 종료일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arn-GU-rQX">
+                                        <rect key="frame" x="32" y="168.66666666666669" width="114" height="25.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 99일 까지 설정 가능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzr-W9-VQ8">
+                                        <rect key="frame" x="31.999999999999993" y="199" width="122.33333333333331" height="14.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ehL-ZV-Mad">
+                                        <rect key="frame" x="0.0" y="243.33333333333331" width="393" height="36"/>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBK-vf-aV6" customClass="defaultBtn" customModule="YourManitto" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="551.66666666666663" width="293" height="34.333333333333371"/>
+                                        <color key="backgroundColor" red="1" green="0.96470588239999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="확인"/>
+                                        <connections>
+                                            <action selector="emailLoginTapped:" destination="mZ1-ZN-CS8" eventType="touchUpInside" id="hYL-LU-kfE"/>
+                                            <action selector="generateRoomID:" destination="N0k-Pe-uIb" eventType="touchUpInside" id="BwF-0i-6jW"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGj-bS-Adk">
+                                        <rect key="frame" x="90" y="412.66666666666663" width="213" height="26"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마니또 공개까지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-QJ-waE">
+                                                <rect key="frame" x="0.0" y="0.0" width="143" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cFz-G8-5GH">
+                                                <rect key="frame" x="143" y="0.0" width="70" height="26"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTE-x9-IQt" customClass="defaultBtn" customModule="YourManitto" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="26"/>
+                                                        <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="70" id="i7R-VK-Y3Q"/>
+                                                        </constraints>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="D - 99">
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="10"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ZCf-l2-0By">
+                                        <rect key="frame" x="30" y="329.33333333333337" width="333" height="58.333333333333314"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023년 07월 26일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iH8-GC-wTM">
+                                                <rect key="frame" x="96.333333333333329" y="0.0" width="140.33333333333337" height="21.666666666666668"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:30 PM 마니또 공개가 맞나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgy-uf-kCo">
+                                                <rect key="frame" x="46.666666666666686" y="36.666666666666629" width="240" height="21.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ehL-ZV-Mad" firstAttribute="leading" secondItem="FT8-Fb-ugD" secondAttribute="leading" id="3bD-B7-rFr"/>
+                                    <constraint firstItem="cKp-lr-c78" firstAttribute="top" secondItem="yHd-US-AD1" secondAttribute="bottom" constant="5" id="46A-kE-2MM"/>
+                                    <constraint firstItem="ZCf-l2-0By" firstAttribute="leading" secondItem="FT8-Fb-ugD" secondAttribute="leading" constant="30" id="6sH-8A-amC"/>
+                                    <constraint firstAttribute="trailing" secondItem="ehL-ZV-Mad" secondAttribute="trailing" id="7uw-6f-zWu"/>
+                                    <constraint firstItem="iGj-bS-Adk" firstAttribute="top" secondItem="Hgy-uf-kCo" secondAttribute="bottom" constant="25" id="BZP-Oo-kaS"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Lt-Yd-QBe" secondAttribute="trailing" constant="30" id="CiV-nN-K2b"/>
+                                    <constraint firstItem="pzr-W9-VQ8" firstAttribute="leading" secondItem="FT8-Fb-ugD" secondAttribute="leading" constant="32" id="Dd8-ll-j6Z"/>
+                                    <constraint firstItem="Arn-GU-rQX" firstAttribute="top" secondItem="2Lt-Yd-QBe" secondAttribute="bottom" constant="40" id="E67-Jm-TXH"/>
+                                    <constraint firstItem="2Lt-Yd-QBe" firstAttribute="leading" secondItem="FT8-Fb-ugD" secondAttribute="leading" constant="30" id="KZh-Bm-5KN"/>
+                                    <constraint firstItem="cBK-vf-aV6" firstAttribute="leading" secondItem="FT8-Fb-ugD" secondAttribute="leading" constant="50" id="Kxp-vK-Siu"/>
+                                    <constraint firstItem="yHd-US-AD1" firstAttribute="leading" secondItem="FT8-Fb-ugD" secondAttribute="leading" constant="32" id="Qa8-Jc-chk"/>
+                                    <constraint firstItem="cKp-lr-c78" firstAttribute="leading" secondItem="FT8-Fb-ugD" secondAttribute="leading" constant="32" id="UDe-fo-Vvd"/>
+                                    <constraint firstItem="iGj-bS-Adk" firstAttribute="leading" secondItem="FT8-Fb-ugD" secondAttribute="leading" constant="90" id="UEw-gi-nyp"/>
+                                    <constraint firstAttribute="trailing" secondItem="iGj-bS-Adk" secondAttribute="trailing" constant="90" id="Wi8-Qd-hPc"/>
+                                    <constraint firstItem="2Lt-Yd-QBe" firstAttribute="top" secondItem="cKp-lr-c78" secondAttribute="bottom" constant="15" id="Xxs-J3-Neg"/>
+                                    <constraint firstItem="ehL-ZV-Mad" firstAttribute="top" secondItem="pzr-W9-VQ8" secondAttribute="bottom" constant="29.999999999999972" id="ai9-OP-94Z"/>
+                                    <constraint firstItem="yHd-US-AD1" firstAttribute="top" secondItem="FT8-Fb-ugD" secondAttribute="top" constant="35" id="byj-bs-0zc"/>
+                                    <constraint firstAttribute="trailing" secondItem="cBK-vf-aV6" secondAttribute="trailing" constant="50" id="ed3-os-01L"/>
+                                    <constraint firstItem="ZCf-l2-0By" firstAttribute="top" secondItem="ehL-ZV-Mad" secondAttribute="bottom" constant="50" id="mT7-JG-nY3"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZCf-l2-0By" secondAttribute="trailing" constant="30" id="oO0-hO-7Ue"/>
+                                    <constraint firstItem="pzr-W9-VQ8" firstAttribute="top" secondItem="Arn-GU-rQX" secondAttribute="bottom" constant="5" id="q94-c8-4fG"/>
+                                    <constraint firstItem="Arn-GU-rQX" firstAttribute="leading" secondItem="FT8-Fb-ugD" secondAttribute="leading" constant="32" id="vkK-tV-2eq"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ijY-ua-p0n"/>
                         <color key="backgroundColor" red="1" green="0.96470588239999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ijY-ua-p0n" firstAttribute="trailing" secondItem="FT8-Fb-ugD" secondAttribute="trailing" id="N6F-LS-iDw"/>
+                            <constraint firstItem="FT8-Fb-ugD" firstAttribute="top" secondItem="mIo-qK-CsM" secondAttribute="bottom" constant="30" id="X8q-Be-tpj"/>
                             <constraint firstItem="mIo-qK-CsM" firstAttribute="leading" secondItem="ijY-ua-p0n" secondAttribute="leading" constant="32" id="dsT-z4-AGc"/>
+                            <constraint firstItem="ijY-ua-p0n" firstAttribute="bottom" secondItem="cBK-vf-aV6" secondAttribute="bottom" constant="40" id="fwR-Iv-JSd"/>
+                            <constraint firstAttribute="bottom" secondItem="FT8-Fb-ugD" secondAttribute="bottom" id="kP2-pi-dFc"/>
                             <constraint firstItem="mIo-qK-CsM" firstAttribute="top" secondItem="W7B-Pj-DB9" secondAttribute="bottom" constant="8" symbolic="YES" id="os6-b4-oXb"/>
+                            <constraint firstItem="FT8-Fb-ugD" firstAttribute="leading" secondItem="ijY-ua-p0n" secondAttribute="leading" id="wh4-R5-aJ8"/>
                             <constraint firstItem="W7B-Pj-DB9" firstAttribute="leading" secondItem="ijY-ua-p0n" secondAttribute="leading" constant="32" id="yts-fh-apk"/>
                             <constraint firstItem="W7B-Pj-DB9" firstAttribute="top" secondItem="ijY-ua-p0n" secondAttribute="top" constant="29" id="zMD-Dk-rIk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="wbr-ym-pzo">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="uzD-Yj-fDx">
-                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="wbr-ym-pzo"/>
+                    <connections>
+                        <outlet property="dDayBtn" destination="cTE-x9-IQt" id="iWL-9d-5px"/>
+                        <outlet property="dateLabel" destination="iH8-GC-wTM" id="Lf2-26-L5r"/>
+                        <outlet property="datePicker" destination="ehL-ZV-Mad" id="1Ef-eb-041"/>
+                        <outlet property="roomNameTextField" destination="2Lt-Yd-QBe" id="1wH-KV-CR7"/>
+                        <outlet property="timeLabel" destination="Hgy-uf-kCo" id="IEa-5K-n8x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IwY-rq-lQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3751.9083969465646" y="79.577464788732399"/>
+            <point key="canvasLocation" x="1000.763358778626" y="1554.9295774647887"/>
         </scene>
-        <!--조교 윤형과 아이들-->
+        <!--My Room View Controller-->
         <scene sceneID="XHO-IZ-U0j">
             <objects>
                 <viewController id="teS-6Z-Nzi" customClass="MyRoomViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
@@ -142,14 +265,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조교 윤형과 아이들" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGX-yg-IlX">
-                                <rect key="frame" x="10" y="113" width="373" height="26.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxj-aX-Uqu" customClass="defaultBtn" customModule="YourManitto" customModuleProvider="target">
-                                <rect key="frame" x="166" y="148" width="60" height="26"/>
+                                <rect key="frame" x="166" y="103" width="60" height="26"/>
                                 <color key="backgroundColor" red="0.92941176470588238" green="0.92941176470588238" blue="0.92941176470588238" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
@@ -158,13 +275,13 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나만의 마니또는" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxy-0Y-j9s">
-                                <rect key="frame" x="33.999999999999993" y="204" width="107.33333333333331" height="20.333333333333343"/>
+                                <rect key="frame" x="33.999999999999993" y="159" width="107.33333333333331" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="324" placeholderIntrinsicHeight="88" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Qs-nZ-egJ" customClass="defaultBtn" customModule="YourManitto" customModuleProvider="target">
-                                <rect key="frame" x="34" y="254.33333333333337" width="324" height="88"/>
+                                <rect key="frame" x="34" y="209.33333333333334" width="324" height="88.000000000000028"/>
                                 <color key="backgroundColor" red="0.88627450980392153" green="0.97254901960784312" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
@@ -173,33 +290,40 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="응원 보내기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOF-hu-N3Z">
-                                <rect key="frame" x="34" y="374.33333333333331" width="78" height="20.333333333333314"/>
+                                <rect key="frame" x="34" y="329.33333333333331" width="78" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fQO-Ax-NRY">
-                                <rect key="frame" x="70" y="424.66666666666669" width="253" height="88.666666666666686"/>
+                                <rect key="frame" x="34" y="379.66666666666669" width="325" height="34.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OB4-XT-VPc">
-                                        <rect key="frame" x="0.0" y="0.0" width="253" height="34.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="34.333333333333336"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5r-fK-TiA" customClass="Room" customModule="YourManitto" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="71" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="66.333333333333329" height="34.333333333333336"/>
                                                 <color key="backgroundColor" red="1" green="0.88627450980392153" blue="0.97647058823529409" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" red="0.98431372549019602" green="0.46666666666666667" blue="0.68235294117647061" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RN-XX-5si" customClass="Room" customModule="YourManitto" customModuleProvider="target">
-                                                <rect key="frame" x="91" y="0.0" width="71" height="34.333333333333336"/>
+                                                <rect key="frame" x="86.333333333333343" y="0.0" width="66.333333333333343" height="34.333333333333336"/>
                                                 <color key="backgroundColor" red="1" green="0.8862745098" blue="0.97647058819999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" red="0.98431372549999996" green="0.46666666670000001" blue="0.68235294120000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup" catalog="system"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHQ-Qy-S3Y" customClass="Room" customModule="YourManitto" customModuleProvider="target">
-                                                <rect key="frame" x="182" y="0.0" width="71" height="34.333333333333336"/>
+                                                <rect key="frame" x="172.66666666666666" y="0.0" width="66" height="34.333333333333336"/>
+                                                <color key="backgroundColor" red="1" green="0.8862745098" blue="0.97647058819999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.98431372549999996" green="0.46666666670000001" blue="0.68235294120000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="eyes" catalog="system"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfn-h0-Tk1" customClass="Room" customModule="YourManitto" customModuleProvider="target">
+                                                <rect key="frame" x="258.66666666666669" y="0.0" width="66.333333333333314" height="34.333333333333336"/>
                                                 <color key="backgroundColor" red="1" green="0.8862745098" blue="0.97647058819999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" red="0.98431372549999996" green="0.46666666670000001" blue="0.68235294120000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Button"/>
@@ -207,42 +331,16 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IbP-Vc-Rbd">
-                                        <rect key="frame" x="0.0" y="54.333333333333314" width="253" height="34.333333333333343"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Axi-nR-XcE" customClass="Room" customModule="YourManitto" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="71" height="34.333333333333336"/>
-                                                <color key="backgroundColor" red="1" green="0.8862745098" blue="0.97647058819999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" red="0.98431372549999996" green="0.46666666670000001" blue="0.68235294120000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="smiley" catalog="system"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Wq-nY-PAg" customClass="Room" customModule="YourManitto" customModuleProvider="target">
-                                                <rect key="frame" x="91" y="0.0" width="71" height="34.333333333333336"/>
-                                                <color key="backgroundColor" red="1" green="0.8862745098" blue="0.97647058819999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" red="0.98431372549999996" green="0.46666666670000001" blue="0.68235294120000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="moon.stars" catalog="system"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXJ-S0-feC" customClass="Room" customModule="YourManitto" customModuleProvider="target">
-                                                <rect key="frame" x="182" y="0.0" width="71" height="34.333333333333336"/>
-                                                <color key="backgroundColor" red="1" green="0.8862745098" blue="0.97647058819999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="tintColor" red="0.98431372549999996" green="0.46666666670000001" blue="0.68235294120000001" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="hands.sparkles" catalog="system"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마니또 공개" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Af-Aj-bUV">
-                                <rect key="frame" x="34" y="553" width="78" height="20.333333333333371"/>
+                                <rect key="frame" x="34" y="453.66666666666669" width="78" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lIj-bp-ehA" customClass="defaultBtn" customModule="YourManitto" customModuleProvider="target">
-                                <rect key="frame" x="119.99999999999999" y="550" width="55.333333333333329" height="26"/>
+                                <rect key="frame" x="119.99999999999999" y="450.66666666666669" width="55.333333333333329" height="26"/>
                                 <color key="backgroundColor" red="0.92941176469999998" green="0.92941176469999998" blue="0.92941176469999998" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
@@ -251,13 +349,13 @@
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023년 07월 26일 (수)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmu-R0-ICA">
-                                <rect key="frame" x="33.999999999999986" y="595" width="190.66666666666663" height="24"/>
+                                <rect key="frame" x="33.999999999999986" y="495.66666666666669" width="190.66666666666663" height="24.000000000000057"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07:30 PM 공개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKr-Z7-27l">
-                                <rect key="frame" x="33.999999999999993" y="627.66666666666663" width="124.33333333333331" height="24"/>
+                                <rect key="frame" x="33.999999999999993" y="528.33333333333337" width="124.33333333333331" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -277,7 +375,7 @@
                         <color key="backgroundColor" red="1" green="0.99607843137254903" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="QOF-hu-N3Z" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="34" id="8oO-wO-jWE"/>
-                            <constraint firstItem="Gxj-aX-Uqu" firstAttribute="top" secondItem="kGX-yg-IlX" secondAttribute="bottom" constant="8.6666666666666572" id="D6C-Yd-5gy"/>
+                            <constraint firstItem="Gxj-aX-Uqu" firstAttribute="top" secondItem="kPE-ja-WGL" secondAttribute="top" id="DJR-8G-Cpw"/>
                             <constraint firstItem="Gxj-aX-Uqu" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="166" id="E97-hm-tar"/>
                             <constraint firstItem="2Qs-nZ-egJ" firstAttribute="top" secondItem="Rxy-0Y-j9s" secondAttribute="bottom" constant="30" id="EYt-48-ns7"/>
                             <constraint firstItem="IKr-Z7-27l" firstAttribute="top" secondItem="tmu-R0-ICA" secondAttribute="bottom" constant="8.6666666666666288" id="Fts-bF-zDe"/>
@@ -287,29 +385,22 @@
                             <constraint firstItem="lIj-bp-ehA" firstAttribute="top" secondItem="fQO-Ax-NRY" secondAttribute="bottom" constant="36.666666666666629" id="Mrj-9l-T8K"/>
                             <constraint firstItem="kPE-ja-WGL" firstAttribute="trailing" secondItem="2Qs-nZ-egJ" secondAttribute="trailing" constant="35" id="RpA-Rf-Kuu"/>
                             <constraint firstItem="2Qs-nZ-egJ" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="34" id="Scm-Y4-d95"/>
-                            <constraint firstItem="kGX-yg-IlX" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="10" id="TKd-k2-4J8"/>
                             <constraint firstItem="8Af-Aj-bUV" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="34" id="UEO-XZ-ihJ"/>
                             <constraint firstItem="kPE-ja-WGL" firstAttribute="bottom" secondItem="j0h-2D-a0s" secondAttribute="bottom" constant="40" id="XS9-5a-aCD"/>
                             <constraint firstItem="tmu-R0-ICA" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="34" id="Xmz-1d-4kc"/>
                             <constraint firstItem="kPE-ja-WGL" firstAttribute="trailing" secondItem="Gxj-aX-Uqu" secondAttribute="trailing" constant="167" id="a41-aq-j44"/>
-                            <constraint firstItem="kPE-ja-WGL" firstAttribute="trailing" secondItem="kGX-yg-IlX" secondAttribute="trailing" constant="10" id="aty-LJ-fh0"/>
                             <constraint firstItem="Rxy-0Y-j9s" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="34" id="bor-nL-G6j"/>
                             <constraint firstItem="8Af-Aj-bUV" firstAttribute="top" secondItem="fQO-Ax-NRY" secondAttribute="bottom" constant="39.666666666666629" id="eXI-nO-ITO"/>
-                            <constraint firstItem="fQO-Ax-NRY" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="70" id="hPl-9M-Hgc"/>
-                            <constraint firstItem="kPE-ja-WGL" firstAttribute="trailing" secondItem="fQO-Ax-NRY" secondAttribute="trailing" constant="70" id="i1T-7N-WQw"/>
+                            <constraint firstItem="fQO-Ax-NRY" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="34" id="hPl-9M-Hgc"/>
+                            <constraint firstItem="kPE-ja-WGL" firstAttribute="trailing" secondItem="fQO-Ax-NRY" secondAttribute="trailing" constant="34" id="i1T-7N-WQw"/>
                             <constraint firstItem="tmu-R0-ICA" firstAttribute="top" secondItem="8Af-Aj-bUV" secondAttribute="bottom" constant="21.666666666666629" id="nxU-xA-EvZ"/>
                             <constraint firstItem="QOF-hu-N3Z" firstAttribute="top" secondItem="2Qs-nZ-egJ" secondAttribute="bottom" constant="32" id="piH-1D-DFs"/>
                             <constraint firstItem="IKr-Z7-27l" firstAttribute="leading" secondItem="kPE-ja-WGL" secondAttribute="leading" constant="34" id="rlL-9o-Ruh"/>
                             <constraint firstItem="Rxy-0Y-j9s" firstAttribute="top" secondItem="Gxj-aX-Uqu" secondAttribute="bottom" constant="30" id="sIy-hN-yQM"/>
-                            <constraint firstItem="kGX-yg-IlX" firstAttribute="top" secondItem="kPE-ja-WGL" secondAttribute="top" constant="10" id="sPX-uq-NoB"/>
                             <constraint firstItem="kPE-ja-WGL" firstAttribute="trailing" secondItem="j0h-2D-a0s" secondAttribute="trailing" constant="51" id="u9o-id-eP4"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="조교 윤형과 아이들" id="IcW-Q5-lLS">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="L5g-BY-gnI">
-                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="IcW-Q5-lLS"/>
                     <connections>
                         <outlet property="MyManittoButton" destination="2Qs-nZ-egJ" id="qNV-JL-DcE"/>
                         <outlet property="deleteButton" destination="j0h-2D-a0s" id="8dR-Ad-WB6"/>
@@ -317,7 +408,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLK-q2-pib" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3752" y="801"/>
+            <point key="canvasLocation" x="1837" y="801"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="fsT-ht-jNt">
@@ -344,7 +435,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IRy-GN-6Wo">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILH-d0-C6K" customClass="Room" customModule="YourManitto" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILH-d0-C6K" customClass="RoomBtn" customModule="YourManitto" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 <color key="backgroundColor" red="0.88627450980392153" green="0.97254901960784312" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" red="0.18823529411764706" green="0.1803921568627451" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -353,7 +444,7 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="N0k-Pe-uIb" kind="show" id="PIS-bl-cDL"/>
+                                                    <action selector="makeRoomButton:" destination="bxU-Sm-YNy" eventType="touchUpInside" id="ZE0-7w-J6L"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -361,19 +452,22 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="130" placeholderIntrinsicHeight="130" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gys-8y-4rr">
                                         <rect key="frame" x="153" y="0.0" width="130" height="130"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-Ti-rmp" customClass="Room" customModule="YourManitto" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-Ti-rmp" customClass="RoomBtn" customModule="YourManitto" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 <color key="backgroundColor" red="0.8862745098" green="0.97254901959999995" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <color key="tintColor" red="0.18823529410000001" green="0.18039215689999999" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="enterRoom" imagePlacement="top" title="방 입장하기" imagePadding="15" titleAlignment="center"/>
+                                                <connections>
+                                                    <action selector="enterRoomButton:" destination="bxU-Sm-YNy" eventType="touchUpInside" id="KNg-zv-uDG"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="De7-GK-drA">
-                                <rect key="frame" x="33" y="373" width="327" height="24"/>
+                                <rect key="frame" x="33" y="343" width="327" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나만의 마니또" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzW-a8-4Hf">
                                         <rect key="frame" x="0.0" y="0.0" width="327" height="24"/>
@@ -384,7 +478,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sZB-SF-mq4" customClass="ListCollectionView">
-                                <rect key="frame" x="0.0" y="424" width="393" height="394"/>
+                                <rect key="frame" x="0.0" y="394" width="393" height="424"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oXV-tK-A0F">
                                     <size key="itemSize" width="393" height="128"/>
@@ -443,7 +537,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="333" height="80"/>
                                         <connections>
-                                            <segue destination="teS-6Z-Nzi" kind="show" id="e8u-L0-2tG"/>
+                                            <segue destination="teS-6Z-Nzi" kind="show" id="qQ1-Va-JcW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -455,7 +549,7 @@
                             <constraint firstItem="e4U-lA-wtv" firstAttribute="leading" secondItem="nGW-7v-W1E" secondAttribute="leading" constant="33" id="48z-B0-M9X"/>
                             <constraint firstItem="OT9-fx-AWy" firstAttribute="leading" secondItem="nGW-7v-W1E" secondAttribute="leading" constant="55" id="5h3-9j-qzR"/>
                             <constraint firstItem="nGW-7v-W1E" firstAttribute="trailing" secondItem="e4U-lA-wtv" secondAttribute="trailing" constant="33" id="7We-8Q-NDO"/>
-                            <constraint firstItem="De7-GK-drA" firstAttribute="top" secondItem="OT9-fx-AWy" secondAttribute="bottom" constant="60" id="88T-xs-0IZ"/>
+                            <constraint firstItem="De7-GK-drA" firstAttribute="top" secondItem="OT9-fx-AWy" secondAttribute="bottom" constant="30" id="88T-xs-0IZ"/>
                             <constraint firstItem="nGW-7v-W1E" firstAttribute="trailing" secondItem="sZB-SF-mq4" secondAttribute="trailing" id="Ol0-2j-NWh"/>
                             <constraint firstItem="e4U-lA-wtv" firstAttribute="top" secondItem="nGW-7v-W1E" secondAttribute="top" constant="30" id="QYG-Sr-opb"/>
                             <constraint firstItem="nGW-7v-W1E" firstAttribute="trailing" secondItem="OT9-fx-AWy" secondAttribute="trailing" constant="55" id="Tbu-RG-Nr0"/>
@@ -470,10 +564,14 @@
                     <navigationItem key="navigationItem" id="f8a-iR-PT7">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="logo" id="N5T-47-rln">
                             <inset key="imageInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape" catalog="system" id="v43-NC-9p6">
                             <inset key="imageInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                             <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <segue destination="KRc-la-vu1" kind="show" id="UQF-hH-AvG"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -482,36 +580,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUy-kr-9Av" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2739.6946564885493" y="800.70422535211276"/>
+            <point key="canvasLocation" x="1000.763358778626" y="800.70422535211276"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="OkT-hv-TEi">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="mZ1-ZN-CS8" customClass="LoginViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="mZ1-ZN-CS8" customClass="LoginViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X4c-8E-O4i">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eob-ni-Nhv">
-                                <rect key="frame" x="63" y="366" width="247" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eob-ni-Nhv" customClass="DefaultTextField" customModule="YourManitto" customModuleProvider="target">
+                                <rect key="frame" x="73" y="361" width="247" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5z9-2M-1DU">
-                                <rect key="frame" x="63" y="428" width="247" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5z9-2M-1DU" customClass="DefaultTextField" customModule="YourManitto" customModuleProvider="target">
+                                <rect key="frame" x="73" y="423" width="247" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78n-8i-sNU" customClass="defaultBtn" customModule="YourManitto" customModuleProvider="target">
-                                <rect key="frame" x="159" y="507" width="75" height="35"/>
+                                <rect key="frame" x="73" y="499" width="247" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.96470588239999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="labelColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="로그인"/>
                                 <connections>
                                     <action selector="emailLoginTapped:" destination="mZ1-ZN-CS8" eventType="touchUpInside" id="9Ed-l8-7im"/>
-                                    <segue destination="bxU-Sm-YNy" kind="show" id="hRS-ah-6mm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -521,6 +620,7 @@
                     <navigationItem key="navigationItem" id="B0l-Dk-cOf"/>
                     <connections>
                         <outlet property="emailTextField" destination="eob-ni-Nhv" id="y0x-Ze-GPS"/>
+                        <outlet property="enterLoginButton" destination="78n-8i-sNU" id="BWA-7K-EE7"/>
                         <outlet property="passwordTextField" destination="5z9-2M-1DU" id="EWW-Ly-IuC"/>
                     </connections>
                 </viewController>
@@ -546,21 +646,122 @@
             </objects>
             <point key="canvasLocation" x="75.572519083969468" y="-2.1126760563380285"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5w6-ho-dzY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bZG-un-R5p" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tp1-0b-9Sj">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="labelColor"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bxU-Sm-YNy" kind="relationship" relationship="rootViewController" id="pPE-8k-1j6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qkn-Kx-6ye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="801"/>
+        </scene>
+        <!--Enter Room View Controller-->
+        <scene sceneID="Waz-Cl-25V">
+            <objects>
+                <viewController storyboardIdentifier="enterRoom" id="mf2-fM-SvF" customClass="EnterRoomViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y6D-RF-TYD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방 입장하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lQ-1A-6PM">
+                                <rect key="frame" x="32.000000000000007" y="88" width="95.666666666666686" height="26"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="두근두근 나만의 마니또를 만나러 -!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ash-DY-aPp">
+                                <rect key="frame" x="32" y="122.00000000000001" width="172.66666666666666" height="40.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pse-hY-UDb" customClass="defaultView" customModule="YourManitto" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="192.66666666666669" width="393" height="659.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HkP-fO-DFL"/>
+                        <color key="backgroundColor" red="1" green="0.96470588239999999" blue="0.77647058820000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5lQ-1A-6PM" firstAttribute="top" secondItem="HkP-fO-DFL" secondAttribute="top" constant="29" id="7SF-cy-l8S"/>
+                            <constraint firstItem="Ash-DY-aPp" firstAttribute="top" secondItem="5lQ-1A-6PM" secondAttribute="bottom" constant="8" symbolic="YES" id="CP9-lX-MMl"/>
+                            <constraint firstItem="Ash-DY-aPp" firstAttribute="leading" secondItem="HkP-fO-DFL" secondAttribute="leading" constant="32" id="MFh-qM-Rvn"/>
+                            <constraint firstItem="Pse-hY-UDb" firstAttribute="top" secondItem="Ash-DY-aPp" secondAttribute="bottom" constant="30" id="bCT-L1-HXm"/>
+                            <constraint firstItem="HkP-fO-DFL" firstAttribute="trailing" secondItem="Pse-hY-UDb" secondAttribute="trailing" id="bEP-Mq-LhD"/>
+                            <constraint firstItem="5lQ-1A-6PM" firstAttribute="leading" secondItem="HkP-fO-DFL" secondAttribute="leading" constant="32" id="ecP-Dx-Km2"/>
+                            <constraint firstItem="Pse-hY-UDb" firstAttribute="leading" secondItem="HkP-fO-DFL" secondAttribute="leading" id="jZr-zh-9PX"/>
+                            <constraint firstAttribute="bottom" secondItem="Pse-hY-UDb" secondAttribute="bottom" id="vJh-Eb-hwm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JGW-tZ-egS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Y3-Kh-DEp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1979" y="1555"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="oUE-Gb-UnK">
+            <objects>
+                <viewController storyboardIdentifier="setting" id="KRc-la-vu1" customClass="SettingViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fnN-T5-l3p">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r0D-Hp-I11">
+                                <rect key="frame" x="0.0" y="123" width="393" height="695"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="vFO-P8-k7Z">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vFO-P8-k7Z" id="aJI-Xy-Nuk">
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MHR-HM-qwc"/>
+                        <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="r0D-Hp-I11" firstAttribute="top" secondItem="MHR-HM-qwc" secondAttribute="top" constant="20" id="IzH-as-bWW"/>
+                            <constraint firstItem="MHR-HM-qwc" firstAttribute="trailing" secondItem="r0D-Hp-I11" secondAttribute="trailing" id="JTT-zV-Jaf"/>
+                            <constraint firstItem="MHR-HM-qwc" firstAttribute="bottom" secondItem="r0D-Hp-I11" secondAttribute="bottom" id="kW3-WT-G97"/>
+                            <constraint firstItem="r0D-Hp-I11" firstAttribute="leading" secondItem="MHR-HM-qwc" secondAttribute="leading" id="mg3-7m-Vz6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="설정" id="dQy-tI-j7d"/>
+                    <connections>
+                        <outlet property="settingTableView" destination="r0D-Hp-I11" id="yRU-Q5-PfH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P2T-UX-fmE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2829.770992366412" y="800.70422535211276"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="enterRoom" width="40" height="40"/>
         <image name="eyes" catalog="system" width="128" height="99"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="hand.thumbsup" catalog="system" width="123" height="128"/>
-        <image name="hands.sparkles" catalog="system" width="122" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="logo" width="30" height="30.333333969116211"/>
         <image name="logoBig" width="142" height="205.33332824707031"/>
         <image name="makeRoom" width="40" height="40"/>
-        <image name="moon.stars" catalog="system" width="125" height="128"/>
-        <image name="smiley" catalog="system" width="128" height="123"/>
         <image name="trash" catalog="system" width="117" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
