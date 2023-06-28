@@ -24,7 +24,7 @@ class MyRoomViewController: UIViewController {
                 ])
         
         deleteButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([deleteButton.heightAnchor.constraint(equalToConstant: 40)
+        NSLayoutConstraint.activate([deleteButton.heightAnchor.constraint(equalToConstant: 45)
                                      ])
     }
     
@@ -46,30 +46,30 @@ extension MyRoomViewController{
         })
     }
     
-    func saveBasicType(){
-        db.child("int").setValue(99)
-        db.child("str").setValue("이작심")
-    }
-    
-    func saveMyRoom(){
-        let myRoom1 = MyRoom(id: "\(MyRoom.id)", dDay: 7, manitto: "조교유녕")
-        MyRoom.id += 1
-        db.child("Users").child(myRoom1.id).setValue(myRoom1.toDictionary)
-    }
+//    func saveBasicType(){
+//        db.child("int").setValue(99)
+//        db.child("str").setValue("이작심")
+//    }
+//
+//    func saveMyRoom(){
+//        let myRoom1 = MyRoom(id: "\(MyRoom.id)", dDay: 7, manitto: "조교유녕")
+//        MyRoom.id += 1
+//        db.child("Users").child(myRoom1.id).setValue(myRoom1.toDictionary)
+//    }
 }
 
-struct MyRoom{
-    let id:String
-    let dDay:Int
-    let manitto:String
-    static var id:Int = 0
-    
-    
-    var toDictionary:[String:Any]{
-        let dict:[String:Any] = ["id":id, "D-day":dDay, "manitto":manitto]
-        return dict
-    }
-}
+//struct MyRoom{
+//    let id:String
+//    let dDay:Int
+//    let manitto:String
+//    static var id:Int = 0
+//
+//
+//    var toDictionary:[String:Any]{
+//        let dict:[String:Any] = ["id":id, "D-day":dDay, "manitto":manitto]
+//        return dict
+//    }
+//}
 
 
 struct Rooms{
@@ -82,29 +82,22 @@ struct Rooms{
 }
 
 struct Room{
+    let id:String
+    static var id:Int = 0
     let dDay:Int
     let date:String
     let owner:String
     let roomId:String
     let roomName:String
     let time:String
-    let userCount:Int
+    let userCount:String
+    static var userCount:Int = 1
     
-    let users:[Users]
-    
-    var toDictionary:[String:Any]{
-        let usersArray = users.map{$0.toDictionary}
-        let dict:[String:Any] = ["dDay":dDay, "date":date,"owner":owner,"roomId":roomId,"roomName":roomName,"time":time,"userCount":userCount,"users":usersArray]
-        return dict
-    }
-    
-}
-
-struct Users{
     let user:[User]
+    
     var toDictionary:[String:Any]{
-        let userArray = user.map{$0.toDictionary}
-        let dict:[String:Any] = ["user":userArray]
+        let usersArray = user.map{$0.toDictionary}
+        let dict:[String:Any] = ["id":id,"dDay":dDay, "date":date,"owner":owner,"roomId":roomId,"roomName":roomName,"time":time,"userCount":userCount,"users":usersArray]
         return dict
     }
     
@@ -125,4 +118,22 @@ struct User{
     }
 }
 
-
+struct Users{
+    //let uuid: String
+    //let nickname: String
+    let myRooms: [MyRoom]
+    
+    var toDictionary: [String: Any] {
+        let myRoomsArray = myRooms.map { $0.toDictionary }
+        let dict: [String: Any] = ["myRooms": myRoomsArray]
+        return dict
+    }
+}
+struct MyRoom{
+    let roomId:String
+    
+    var toDictionary:[String:Any]{
+        let dict:[String:Any] = ["roomId":roomId]
+        return dict
+    }
+}

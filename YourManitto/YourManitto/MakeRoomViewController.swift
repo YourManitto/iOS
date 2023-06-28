@@ -10,7 +10,9 @@ import Firebase
 
 class MakeRoomViewController: UIViewController {
     let db = Database.database().reference()
-    
+    // Firebase에 UUID와 닉네임 저장
+ 
+    @IBOutlet weak var generateRoomID: defaultBtn!
     @IBOutlet weak var roomNameTextField: DefaultTextField!
     @IBOutlet weak var dDayBtn: defaultBtn!
     @IBOutlet weak var timeLabel: UILabel!
@@ -18,6 +20,10 @@ class MakeRoomViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     override func viewDidLoad() {
             super.viewDidLoad()
+        
+        generateRoomID.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([generateRoomID.heightAnchor.constraint(equalToConstant: 45)
+                                     ])
         // 오늘 날짜 가져오기
             let currentDate = Date()
             
@@ -30,10 +36,13 @@ class MakeRoomViewController: UIViewController {
             updateLabels()
         // 버튼의 글씨 크기 설정
                 dDayBtn.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        roomNameTextField.delegate = self
         }
         
         @objc func datePickerValueChanged() {
             updateLabels()
+            // 날짜 선택 후 창 닫기
+                view.endEditing(true)
         }
         
         func updateLabels() {
@@ -80,7 +89,7 @@ class MakeRoomViewController: UIViewController {
 
                 // 토스트 메시지 표시
                 self.showToast(message: "클립보드에 복사 완료")
-                if let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "enterRoom"){
+                if let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainViewController"){
                     self.navigationController?.pushViewController(mainVC, animated: true)
                 }
             }
@@ -156,10 +165,36 @@ extension MakeRoomViewController{
         
         dateFormatter.dateFormat = "h:mm a"
         let selectedTime = dateFormatter.string(from: datePicker.date)
-
-            let room = Room(dDay: 90, date: selectedDate, owner: "jamin",roomId: generatedID, roomName: roomName, time: selectedTime, userCount: 2, users: [])
-            db.child("Rooms").child(room.roomId).setValue(room.toDictionary)
-
+        
+        // D-day 계산
+        let currentDate = Date()
+        let selectedDateString = dateFormatter.date(from: selectedDate) ?? Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.day], from: calendar.startOfDay(for: currentDate), to: calendar.startOfDay(for: selectedDateString))
+        let dDay = components.day ?? 0
+        
+        guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
+                print("UUID 못가져와")
+                return
+            }
+        
+        let user = [User(fire: 0, heart: 0, like: 0, luck: 0, manitto: "", userId: uuid)]
+        
+        let room = Room(id:"\(Room.id)",dDay: dDay, date: selectedDate, owner: uuid,roomId: generatedID, roomName: roomName, time: selectedTime, userCount: "\(Room.userCount)", user: user)
+        Room.userCount += 1
+        Room.id += 1
+        db.child("Rooms").child(room.roomId).setValue(room.toDictionary)
+        
+        let myRooms = MyRoom(roomId: generatedID)
+        //let users = Users(myRooms: [myRooms])
+        db.child("Users").child(uuid).child("myRooms").child(room.id).setValue(myRooms.toDictionary)
     }
     
+}
+
+extension MakeRoomViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
