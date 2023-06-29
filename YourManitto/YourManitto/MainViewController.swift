@@ -8,13 +8,12 @@
 import UIKit
 import Firebase
 
-class MainViewController: UIViewController,UICollectionViewDataSource {
+class MainViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
     let db = Database.database().reference()
     var uuid: String? // UUID 값을 저장할 변수
     var roomCodes: [String] = [] // 방 코드를 저장할 배열
     var roomData: [String: Any] = [:] // 방 정보를 저장할 딕셔너리
     @IBOutlet weak var ListCollectionView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,17 +21,15 @@ class MainViewController: UIViewController,UICollectionViewDataSource {
                 if let uuid = UIDevice.current.identifierForVendor?.uuidString {
                     self.uuid = uuid
                 }
-        print("fetch 전")
-        fetchRoomCodes()
-        print("fetch 후")
+        fetchRoomsForUser()
         ListCollectionView.dataSource=self
+        ListCollectionView.delegate = self
      
          let layout = UICollectionViewFlowLayout()
          layout.scrollDirection = .vertical // 세로 스크롤 방향으로 설정
          layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20) // 좌우 마진 설정
                  
          ListCollectionView.collectionViewLayout = layout
-        
      
     }
     
@@ -51,10 +48,30 @@ class MainViewController: UIViewController,UICollectionViewDataSource {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    // 대기실로 이동
+       func navigateToWaitingRoom(with roomCode: String, roomInfo: [String: Any]) {
+           guard let vc = storyboard?.instantiateViewController(withIdentifier: "waitingRoom") as? WaitingViewController else {
+               return
+           }
+
+           vc.roomCode = roomCode
+           vc.roomInfo = roomInfo
+           navigationController?.pushViewController(vc, animated: true)
+       }
+
+       // 내 방으로 이동
+       func navigateToMyRoom(with roomCode: String, roomInfo: [String: Any]) {
+           guard let vc = storyboard?.instantiateViewController(withIdentifier: "myRoom") as? MyRoomViewController else {
+               return
+           }
+
+           vc.roomCode = roomCode
+           vc.roomInfo = roomInfo
+           navigationController?.pushViewController(vc, animated: true)
+       }
     
     
-    
- override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews() {
          super.viewDidLayoutSubviews()
          
          // 컬렉션 뷰 가로 크기 설정
@@ -62,78 +79,139 @@ class MainViewController: UIViewController,UICollectionViewDataSource {
              flowLayout.itemSize = CGSize(width: ListCollectionView.bounds.width - 54, height: 80) // 가로 크기 설정 (-40은 좌우 마진 20씩을 고려한 값)
          }
      }
+    
     // 컬렉션 뷰 데이터 소스 - 아이템 개수 설정
-        func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return roomCodes.count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return roomCodes.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("cell 선택됨")
+        let roomCode = roomCodes[indexPath.item]
+        print(roomCode)
+            if let roomInfo = roomData[roomCode] as? [String: Any] {
+                print(roomInfo)
+            if let isMatch = roomInfo["isMatch"] as? Int {
+                if isMatch == 0 {
+                    print("매칭 전")
+                    navigateToWaitingRoom(with: roomCode, roomInfo: roomInfo)
+                } else {
+                    print("매칭 완료")
+                    navigateToMyRoom(with: roomCode, roomInfo: roomInfo)
+                }
+            }
         }
-        
-        // 컬렉션 뷰 데이터 소스 - 셀 설정
-        func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellIdentifier", for: indexPath) as! RoomCollectionViewCell
+    }
+    
+    // 컬렉션 뷰 데이터 소스 - 셀 설정
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellIdentifier", for: indexPath) as! RoomCollectionViewCell
          cell.layer.cornerRadius = 12
          cell.layer.borderWidth = 1 // 테두리 두께 설정
          cell.layer.borderColor = UIColor.lightGray.cgColor // 테두리 색상 설정
+        
+        let roomCode = roomCodes[indexPath.item]
+        if let roomInfo = roomData[roomCode] as? [String: Any] {
+            if let roomName = roomInfo["name"] as? String {
+                cell.roomNameLabel.text = roomName
+                print("roomName ---> \(roomName)")
+            }
             
-            let roomCode = roomCodes[indexPath.item]
-                if let roomInfo = roomData[roomCode] as? [String: Any] {
-                    // 방 정보를 사용하여 셀에 표시할 내용 설정
-                    // 예: 셀의 텍스트 레이블에 방 이름을 표시
-                    if let roomName = roomInfo["roomName"] as? String {
-                        cell.roomNameLabel.text = roomName
-                    }
-                }
-                 
-            
-            return cell
         }
+      
+        return cell
+    }
 }
+
 
 class RoomCollectionViewCell: UICollectionViewCell{
     
     @IBOutlet weak var roomNameLabel: UILabel!
 }
+
+
+
 extension MainViewController{
-    
-    func fetchRoomCodes() {
-        print("fetchRoomCode 실행됨!!!")
-            // 파이어베이스에서 Users 테이블의 방 코드들을 가져오는 로직을 구현합니다.
-            db.child("Users").child(uuid!).child("myRooms").observeSingleEvent(of: .value) { [weak self] (snapshot) in
-                guard let self = self else { return }
+    func fetchRoomsForUser() {
+        guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
+            print("UUID를 가져올 수 없습니다.")
+            return
+        }
+        
+        let roomUserRef = db.child("room_user")
+        
+        // room_user 테이블의 모든 항목을 탐색하여 내 UUID를 포함하는 roomID들을 구합니다.
+        roomUserRef.observeSingleEvent(of: .value, with: { snapshot in
+            if snapshot.exists() {
+                var roomIDs: [String] = []
                 
-                if let myRooms = snapshot.value as? [String: [String: String]] {
-                    for (_, roomData) in myRooms {
-                        print(snapshot)
-                        if let roomId = roomData["roomId"] {
-                            self.roomCodes.append(roomId)
-                        }
+                for child in snapshot.children {
+                    guard let roomSnapshot = child as? DataSnapshot else {
+                        continue
                     }
                     
-                    self.fetchRoomData() // 가져온 방 코드들을 사용하여 방 정보를 가져옴
-                }
-            }
-        }
-        
-    func fetchRoomData() {
-        // 방 코드를 사용하여 Rooms 테이블에서 방의 정보를 가져오는 로직을 구현합니다.
-        let roomDataGroup = DispatchGroup()
-        
-        for roomCode in roomCodes {
-            roomDataGroup.enter()
-            
-            db.child("Rooms").child(roomCode).observeSingleEvent(of: .value) { [weak self] (snapshot) in
-                guard let self = self else { return }
-                
-                if let roomInfo = snapshot.value as? [String: Any] {
-                    self.roomData[roomCode] = roomInfo // 방 정보를 딕셔너리에 저장
-                    print("룸이름은!!!\(roomInfo)")
+                    let roomData = roomSnapshot.value as? [String: Any]
+                    
+                    // 내 UUID를 포함하는 roomID를 찾습니다.
+                    if let userIds = roomData?.keys.compactMap({ $0 as? String }), userIds.contains(uuid) {
+                        roomIDs.append(roomSnapshot.key)  // 방 코드를 추가합니다.
+                    }
                 }
                 
-                roomDataGroup.leave()
+                // 방 정보를 가져옵니다.
+                self.fetchRoomInfo(roomIDs: roomIDs)
+            } else {
+                print("room_user 데이터가 없습니다.")
             }
-        }
+        })
+    }
+
+    func fetchRoomInfo(roomIDs: [String]) {
+        let roomsRef = db.child("rooms")
         
-        roomDataGroup.notify(queue: .main) {
-            self.ListCollectionView.reloadData() // 리스트 컬렉션 뷰를 업데이트하여 데이터 표시
+        // roomIDs에 해당하는 방 정보를 가져옵니다.
+        for roomID in roomIDs {
+            roomsRef.child(roomID).observeSingleEvent(of: .value, with: { snapshot in
+                if snapshot.exists() {
+                    if let roomData = snapshot.value as? [String: Any] {
+                        // 가져온 방 정보 활용
+                        print("방 정보: \(roomData)")
+                        
+                        // 방 코드를 roomCodes 배열에 추가합니다.
+                        self.roomCodes.append(roomID)
+                        
+                        // 방 정보를 저장합니다.
+                        self.roomData[roomID] = roomData
+                        
+                        // 방 정보를 가져올 때마다 컬렉션 뷰를 새로고침합니다.
+                        self.ListCollectionView.reloadData()
+                        
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyy년 MM월 dd일"
+
+                        let sortedRoomCodes = self.roomCodes.sorted { (roomCode1: String, roomCode2: String) -> Bool in
+                            guard let roomInfo1 = self.roomData[roomCode1] as? [String: Any],
+                                  let roomInfo2 = self.roomData[roomCode2] as? [String: Any],
+                                  let dateString1 = roomInfo1["date"] as? String,
+                                  let dateString2 = roomInfo2["date"] as? String,
+                                  let date1 = dateFormatter.date(from: dateString1),
+                                  let date2 = dateFormatter.date(from: dateString2) else {
+                                return false
+                            }
+                            return date1 < date2
+                        }
+                        
+                        // 정렬된 방 코드 배열을 업데이트합니다.
+                        self.roomCodes = sortedRoomCodes
+                        
+                        // 정렬된 방 정보를 사용하여 컬렉션 뷰를 다시 로드합니다.
+                        self.ListCollectionView.reloadData()
+                    }
+                } else {
+                    print("방 ID에 해당하는 정보가 없습니다.")
+                }
+            })
         }
     }
+
 }

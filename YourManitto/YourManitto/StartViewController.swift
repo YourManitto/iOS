@@ -19,6 +19,7 @@ class StartViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.otherButton.isHidden = true
         
         // UUID 가져오기
                 guard let uuid = UIDevice.current.identifierForVendor?.uuidString else {
@@ -27,7 +28,7 @@ class StartViewController: UIViewController {
                 }
                 
                 // Firebase에서 UUID 확인
-                let databaseRef = Database.database().reference().child("Users").child(uuid)
+                let databaseRef = Database.database().reference().child("users").child(uuid)
                 databaseRef.observeSingleEvent(of: .value) { snapshot in
                     if snapshot.exists() {
                         // UUID가 등록되어 있는 경우
@@ -40,6 +41,9 @@ class StartViewController: UIViewController {
                         self.navigationController?.pushViewController(vc, animated: true)
                     } else {
                         print("UUID 없슴")
+                        // UUID가 등록되어 있지 않은 경우
+                                    // 버튼을 보이게 설정
+                                    self.otherButton.isHidden = false
                     }
                 }
 

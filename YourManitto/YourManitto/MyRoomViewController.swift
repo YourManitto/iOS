@@ -14,6 +14,8 @@ class MyRoomViewController: UIViewController {
     @IBOutlet weak var MyManittoButton: defaultBtn!
     
     let db = Database.database().reference()
+    var roomInfo: [String: Any]? // 방 정보를 저장할 변수
+    var roomCode: String? // 방 코드를 저장할 변수
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,68 +74,105 @@ extension MyRoomViewController{
 //}
 
 
-struct Rooms{
-    let rooms:[Room]
-    var toDictionary:[String:Any]{
-        let roomsArray = rooms.map{$0.toDictionary}
-        let dict:[String:Any] = ["rooms":roomsArray]
-        return dict
-    }
-}
+//struct Rooms{
+//    let rooms:[Room]
+//    var toDictionary:[String:Any]{
+//        let roomsArray = rooms.map{$0.toDictionary}
+//        let dict:[String:Any] = ["rooms":roomsArray]
+//        return dict
+//    }
+//}
+//
+//struct Room{
+//    let id:String
+//    static var id:Int = 0
+//    let dDay:Int
+//    let date:String
+//    let owner:String
+//    let roomId:String
+//    let roomName:String
+//    let time:String
+//    let userCount:String
+//    static var userCount:Int = 1
+//
+//    let user:[User]
+//
+//    var toDictionary:[String:Any]{
+//        let usersArray = user.map{$0.toDictionary}
+//        let dict:[String:Any] = ["id":id,"dDay":dDay, "date":date,"owner":owner,"roomId":roomId,"roomName":roomName,"time":time,"userCount":userCount,"users":usersArray]
+//        return dict
+//    }
+//
+//}
+//
+//struct User{
+//    let fire:Int
+//    let heart:Int
+//    let like:Int
+//    let luck:Int
+//    let manitto:String
+//    let userId:String
+//    static var userId:Int = 0
+//
+//    var toDictionary:[String:Any]{
+//        let dict:[String:Any] = ["fire":fire,"heart":heart,"like":like,"luck":luck,"manitto":manitto,"id":userId]
+//        return dict
+//    }
+//}
+//
+//struct Users{
+//    //let uuid: String
+//    //let nickname: String
+//    let myRooms: [MyRoom]
+//
+//    var toDictionary: [String: Any] {
+//        let myRoomsArray = myRooms.map { $0.toDictionary }
+//        let dict: [String: Any] = ["myRooms": myRoomsArray]
+//        return dict
+//    }
+//}
+//struct MyRoom{
+//    let roomId:String
+//
+//    var toDictionary:[String:Any]{
+//        let dict:[String:Any] = ["roomId":roomId]
+//        return dict
+//    }
+//}
 
 struct Room{
-    let id:String
-    static var id:Int = 0
-    let dDay:Int
     let date:String
-    let owner:String
-    let roomId:String
-    let roomName:String
     let time:String
-    let userCount:String
-    static var userCount:Int = 1
-    
-    let user:[User]
+    let name:String
+    let isMatch:Bool
     
     var toDictionary:[String:Any]{
-        let usersArray = user.map{$0.toDictionary}
-        let dict:[String:Any] = ["id":id,"dDay":dDay, "date":date,"owner":owner,"roomId":roomId,"roomName":roomName,"time":time,"userCount":userCount,"users":usersArray]
+        let dict:[String:Any] = ["date":date, "time":time,"name":name,"isMatch":isMatch]
         return dict
     }
-    
 }
 
 struct User{
-    let fire:Int
-    let heart:Int
-    let like:Int
-    let luck:Int
-    let manitto:String
-    let userId:String
-    static var userId:Int = 0
+    let nickname:String
     
     var toDictionary:[String:Any]{
-        let dict:[String:Any] = ["fire":fire,"heart":heart,"like":like,"luck":luck,"manitto":manitto,"id":userId]
+        let dict:[String:Any] = ["nickname":nickname]
         return dict
     }
 }
 
-struct Users{
-    //let uuid: String
-    //let nickname: String
-    let myRooms: [MyRoom]
-    
-    var toDictionary: [String: Any] {
-        let myRoomsArray = myRooms.map { $0.toDictionary }
-        let dict: [String: Any] = ["myRooms": myRoomsArray]
-        return dict
-    }
-}
-struct MyRoom{
-    let roomId:String
+struct Room_User{
+    let luck_cnt:Int
+    let heart_cnt:Int
+    let like_cnt:Int
+    let fire_cnt:Int
+    let isCreator:Bool
+    let manito_roomId:String
+    let manito_userId:String
     
     var toDictionary:[String:Any]{
-        let dict:[String:Any] = ["roomId":roomId]
+        let dict:[String:Any] = ["luck_cnt":luck_cnt,"heart_cnt":heart_cnt,"like_cnt":like_cnt,"fire_cnt":fire_cnt,"isCreator":isCreator,"manito_roomId":manito_roomId,"manito_userId":manito_userId]
         return dict
     }
 }
+

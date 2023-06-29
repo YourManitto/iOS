@@ -7,7 +7,7 @@
 
 import UIKit
 
-class defaultBtn: UIButton {
+class dDaybtn: UIButton {
 
     override func awakeFromNib() {
         super.awakeFromNib()

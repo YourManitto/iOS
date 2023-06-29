@@ -21,7 +21,7 @@ class NickNameViewController: UIViewController {
         guard let uuid = UIDevice.current.identifierForVendor?.uuidString else { return }
         
         // Firebase에 UUID와 닉네임 저장
-        let ref = Database.database().reference().child("Users").child(uuid)
+        let ref = Database.database().reference().child("users").child(uuid)
         ref.setValue(["nickname": nickname]) { (error, _) in
             if let error = error {
                 print("Error adding data: \(error)")

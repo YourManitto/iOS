@@ -10,7 +10,7 @@ import Firebase
 
 class MakeRoomViewController: UIViewController {
     let db = Database.database().reference()
-    // Firebase에 UUID와 닉네임 저장
+    
  
     @IBOutlet weak var generateRoomID: defaultBtn!
     @IBOutlet weak var roomNameTextField: DefaultTextField!
@@ -20,22 +20,21 @@ class MakeRoomViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     override func viewDidLoad() {
             super.viewDidLoad()
-        
         generateRoomID.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([generateRoomID.heightAnchor.constraint(equalToConstant: 45)
                                      ])
         // 오늘 날짜 가져오기
-            let currentDate = Date()
-            
-            // datePicker의 minimumDate를 오늘 날짜로 설정
-            datePicker.minimumDate = currentDate
-            
-            datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
-            
-            // 현재 선택된 값으로 초기 설정
-            updateLabels()
+        let currentDate = Date()
+        
+        // datePicker의 minimumDate를 오늘 날짜로 설정
+        datePicker.minimumDate = currentDate
+        
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: .valueChanged)
+        
+        // 현재 선택된 값으로 초기 설정
+        updateLabels()
         // 버튼의 글씨 크기 설정
-                dDayBtn.titleLabel?.font = UIFont.systemFont(ofSize: 10)
+        dDayBtn.titleLabel?.font = UIFont.systemFont(ofSize: 10)
         roomNameTextField.delegate = self
         }
         
@@ -74,8 +73,6 @@ class MakeRoomViewController: UIViewController {
                 showAlert(title: "알림", message: "방 이름을 입력해주세요.")
                 return
             }
-
-
                 let generatedID = generateUniqueID()
                 generateNewRoom(roomName: roomName,generatedID: generatedID)
             
@@ -178,16 +175,13 @@ extension MakeRoomViewController{
                 return
             }
         
-        let user = [User(fire: 0, heart: 0, like: 0, luck: 0, manitto: "", userId: uuid)]
         
-        let room = Room(id:"\(Room.id)",dDay: dDay, date: selectedDate, owner: uuid,roomId: generatedID, roomName: roomName, time: selectedTime, userCount: "\(Room.userCount)", user: user)
-        Room.userCount += 1
-        Room.id += 1
-        db.child("Rooms").child(room.roomId).setValue(room.toDictionary)
+        let room_user = Room_User(luck_cnt: 0, heart_cnt: 0, like_cnt: 0, fire_cnt: 0, isCreator: true, manito_roomId: generatedID, manito_userId: "")
         
-        let myRooms = MyRoom(roomId: generatedID)
-        //let users = Users(myRooms: [myRooms])
-        db.child("Users").child(uuid).child("myRooms").child(room.id).setValue(myRooms.toDictionary)
+        db.child("room_user").child(room_user.manito_roomId).child(uuid).setValue(room_user.toDictionary)
+        
+        let room = Room(date: selectedDate, time: selectedTime,name:roomName,isMatch: false)
+        db.child("rooms").child(generatedID).setValue(room.toDictionary)
     }
     
 }

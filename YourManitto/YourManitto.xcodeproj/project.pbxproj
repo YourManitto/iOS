@@ -13,6 +13,11 @@
 		ED3E655C2A48A81E005C26B9 /* EnterRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E655B2A48A81E005C26B9 /* EnterRoomViewController.swift */; };
 		ED3E65602A49CEF6005C26B9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3E655F2A49CEF6005C26B9 /* SettingViewController.swift */; };
 		ED41C8E22A4B407E002016D2 /* NickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41C8E12A4B407E002016D2 /* NickNameViewController.swift */; };
+		ED41C8E42A4E07BC002016D2 /* WaitingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41C8E32A4E07BC002016D2 /* WaitingViewController.swift */; };
+		ED41C8E62A4E42D9002016D2 /* defaultBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41C8E52A4E42D9002016D2 /* defaultBtn.swift */; };
+		ED41C8E82A4E43D9002016D2 /* UpdateNickNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41C8E72A4E43D9002016D2 /* UpdateNickNameViewController.swift */; };
+		ED41C8EA2A4E4451002016D2 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41C8E92A4E4451002016D2 /* ContactViewController.swift */; };
+		ED41C8EC2A4E448D002016D2 /* WithdrawalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41C8EB2A4E448D002016D2 /* WithdrawalViewController.swift */; };
 		ED5FB07A2A440A9F000B09CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB0792A440A9F000B09CE /* AppDelegate.swift */; };
 		ED5FB07C2A440A9F000B09CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB07B2A440A9F000B09CE /* SceneDelegate.swift */; };
 		ED5FB07E2A440A9F000B09CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5FB07D2A440A9F000B09CE /* ViewController.swift */; };
@@ -38,6 +43,11 @@
 		ED3E655B2A48A81E005C26B9 /* EnterRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterRoomViewController.swift; sourceTree = "<group>"; };
 		ED3E655F2A49CEF6005C26B9 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		ED41C8E12A4B407E002016D2 /* NickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NickNameViewController.swift; sourceTree = "<group>"; };
+		ED41C8E32A4E07BC002016D2 /* WaitingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingViewController.swift; sourceTree = "<group>"; };
+		ED41C8E52A4E42D9002016D2 /* defaultBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultBtn.swift; sourceTree = "<group>"; };
+		ED41C8E72A4E43D9002016D2 /* UpdateNickNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNickNameViewController.swift; sourceTree = "<group>"; };
+		ED41C8E92A4E4451002016D2 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		ED41C8EB2A4E448D002016D2 /* WithdrawalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalViewController.swift; sourceTree = "<group>"; };
 		ED5FB0762A440A9F000B09CE /* YourManitto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourManitto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5FB0792A440A9F000B09CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED5FB07B2A440A9F000B09CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +141,11 @@
 				ED3E655F2A49CEF6005C26B9 /* SettingViewController.swift */,
 				EDFA33162A49E9BB00CB0C30 /* DefaultTextField.swift */,
 				ED41C8E12A4B407E002016D2 /* NickNameViewController.swift */,
+				ED41C8E32A4E07BC002016D2 /* WaitingViewController.swift */,
+				ED41C8E52A4E42D9002016D2 /* defaultBtn.swift */,
+				ED41C8E72A4E43D9002016D2 /* UpdateNickNameViewController.swift */,
+				ED41C8E92A4E4451002016D2 /* ContactViewController.swift */,
+				ED41C8EB2A4E448D002016D2 /* WithdrawalViewController.swift */,
 			);
 			path = YourManitto;
 			sourceTree = "<group>";
@@ -259,17 +274,22 @@
 				ED5FB0992A44ABFE000B09CE /* Dday.swift in Sources */,
 				ED5FB07A2A440A9F000B09CE /* AppDelegate.swift in Sources */,
 				ED5FB0932A448424000B09CE /* Room.swift in Sources */,
+				ED41C8E62A4E42D9002016D2 /* defaultBtn.swift in Sources */,
 				ED5FB07C2A440A9F000B09CE /* SceneDelegate.swift in Sources */,
 				ED3E65602A49CEF6005C26B9 /* SettingViewController.swift in Sources */,
+				ED41C8EC2A4E448D002016D2 /* WithdrawalViewController.swift in Sources */,
 				ED3E655C2A48A81E005C26B9 /* EnterRoomViewController.swift in Sources */,
 				ED3E655A2A48A08C005C26B9 /* MakeRoomViewController.swift in Sources */,
+				ED41C8EA2A4E4451002016D2 /* ContactViewController.swift in Sources */,
 				ED5FB09F2A455925000B09CE /* StartViewController.swift in Sources */,
 				ED5FB09B2A44AD89000B09CE /* MyRoomViewController.swift in Sources */,
 				ED3E65582A489EFA005C26B9 /* defaultView.swift in Sources */,
 				ED5FB0952A448E3E000B09CE /* MainViewController.swift in Sources */,
 				ED41C8E22A4B407E002016D2 /* NickNameViewController.swift in Sources */,
+				ED41C8E42A4E07BC002016D2 /* WaitingViewController.swift in Sources */,
 				ED5FB0A12A456274000B09CE /* LoginViewController.swift in Sources */,
 				EDFA33172A49E9BB00CB0C30 /* DefaultTextField.swift in Sources */,
+				ED41C8E82A4E43D9002016D2 /* UpdateNickNameViewController.swift in Sources */,
 				ED5FB09D2A45583A000B09CE /* longButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
