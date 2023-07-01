@@ -21,6 +21,7 @@ class MainViewController: UIViewController,UICollectionViewDataSource, UICollect
                 if let uuid = UIDevice.current.identifierForVendor?.uuidString {
                     self.uuid = uuid
                 }
+        //방 목록 가져옴
         fetchRoomsForUser()
         ListCollectionView.dataSource=self
         ListCollectionView.delegate = self
@@ -30,8 +31,14 @@ class MainViewController: UIViewController,UICollectionViewDataSource, UICollect
          layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20) // 좌우 마진 설정
                  
          ListCollectionView.collectionViewLayout = layout
-     
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+       
+       // 컬렉션 뷰 새로고침
+        ListCollectionView.reloadData()
+       }
     
     @IBAction func makeRoomButton(_ sender: UIButton) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "makeRoom") as? MakeRoomViewController else {
@@ -79,6 +86,8 @@ class MainViewController: UIViewController,UICollectionViewDataSource, UICollect
              flowLayout.itemSize = CGSize(width: ListCollectionView.bounds.width - 54, height: 80) // 가로 크기 설정 (-40은 좌우 마진 20씩을 고려한 값)
          }
      }
+    
+    
     
     // 컬렉션 뷰 데이터 소스 - 아이템 개수 설정
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

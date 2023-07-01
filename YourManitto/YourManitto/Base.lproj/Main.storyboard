@@ -472,7 +472,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sZB-SF-mq4" customClass="ListCollectionView">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sZB-SF-mq4" customClass="ListCollectionView" customModule="YourManitto" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="394" width="393" height="424"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oXV-tK-A0F">
@@ -837,13 +837,48 @@
         <!--Update Nick Name View Controller-->
         <scene sceneID="aKG-XI-SyQ">
             <objects>
-                <viewController id="PIr-VM-rEl" customClass="UpdateNickNameViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateNickNameViewController" id="PIr-VM-rEl" customClass="UpdateNickNameViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QEm-UB-Wh5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ofZ-rJ-9RB">
+                                <rect key="frame" x="148" y="274" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DV-90-mfr">
+                                <rect key="frame" x="159" y="374" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="updateNickNameButton:" destination="PIr-VM-rEl" eventType="touchUpInside" id="wSg-3g-sUz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="현재 닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uIE-y7-jLL">
+                                <rect key="frame" x="157" y="161" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="현재 닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrs-bt-ruI">
+                                <rect key="frame" x="157" y="208" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VTm-6Q-XrF"/>
                         <color key="backgroundColor" red="1" green="0.99607843139999996" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="currentNicknameLabel" destination="mrs-bt-ruI" id="E8D-Qv-ZJK"/>
+                        <outlet property="nickNameTextField" destination="ofZ-rJ-9RB" id="gd6-aQ-J19"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bb-ug-d0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -888,6 +923,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="확인"/>
                                         <connections>
                                             <action selector="enterRoomButton:" destination="mf2-fM-SvF" eventType="touchUpInside" id="L4y-Fl-rAU"/>
+                                            <action selector="setManitofunc:" destination="tWS-Nb-byU" eventType="touchUpInside" id="Qe2-1Z-hDA"/>
                                         </connections>
                                     </button>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qee-gr-wXQ" customClass="waitingListCollectionView" customModule="YourManitto" customModuleProvider="target">
@@ -920,6 +956,9 @@
                                                             <buttonConfiguration key="configuration" style="plain">
                                                                 <imageReference key="image" image="xmark.circle" catalog="system" symbolScale="small"/>
                                                             </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="deleteUserFunc:" destination="INL-Iu-rfS" eventType="touchUpInside" id="GYG-76-FrS"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -933,6 +972,7 @@
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="393" height="55"/>
                                                 <connections>
+                                                    <outlet property="deleteUserButton" destination="obH-62-kgg" id="nrL-1S-Mac"/>
                                                     <outlet property="waitingUserLabel" destination="R8x-wQ-thg" id="fCL-ga-Z9W"/>
                                                 </connections>
                                             </collectionViewCell>
@@ -999,6 +1039,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="FES-kg-eUq"/>
                     <connections>
+                        <outlet property="confirmButton" destination="hcV-nY-7Qb" id="JHU-dn-Pew"/>
+                        <outlet property="noticeLabel" destination="GLI-vL-qYb" id="hkt-YM-cPB"/>
                         <outlet property="userCountLabel" destination="THp-xc-1oI" id="DnT-OP-Lwp"/>
                         <outlet property="waitingListCollectionView" destination="qee-gr-wXQ" id="5QD-cA-cR4"/>
                     </connections>
@@ -1010,7 +1052,7 @@
         <!--Contact View Controller-->
         <scene sceneID="QCg-Po-ogk">
             <objects>
-                <viewController id="wN1-jm-JMw" customClass="ContactViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactViewController" id="wN1-jm-JMw" customClass="ContactViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="APJ-Mn-YGM">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1025,7 +1067,7 @@
         <!--Withdrawal View Controller-->
         <scene sceneID="WgM-Xx-20k">
             <objects>
-                <viewController id="86e-dW-QBF" customClass="WithdrawalViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WithdrawalViewController" id="86e-dW-QBF" customClass="WithdrawalViewController" customModule="YourManitto" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xjO-ud-Q7A">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
